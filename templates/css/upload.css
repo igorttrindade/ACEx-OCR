@@ -1,0 +1,59 @@
+@import url(./global.css);
+
+main{
+  margin-top: 35px;
+  position: relative;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container-file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 60px;
+    background-color: var(--primaryColor);
+    border-radius: 10px;
+}
+.lbl_inputfile{
+  border-radius: 5px;
+  color: #000000;
+}
+
+#showPDF{
+  width: 720px;
+  height: 700px;
+}
+
+.container_btn{
+  display: flex;
+  gap: 20px;
+}
+
+#dropdownMenuButton{
+  border-radius: 50%;
+}
+
+#btn_avancar{
+  background-color: #54ffc9;
+}
+
+#btn_avancar:hover{
+  transition: 0.5s ease;
+  background-color: #3eff7f;
+}
+
+#btn_delete{
+  background-color: #ff7676;
+}
+
+#btn_delete:hover{
+  transition: 0.5s ease;
+  background-color: #ff3535;
+}

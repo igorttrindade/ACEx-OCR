@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConverter | Upload</title>
+    <link rel="stylesheet" href="../css/upload.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <ul class="navigation">
+                    <a href="./upload.html">
+                        <li class="navigation_link">Upload</li>
+                    </a>
+                    <a href="./registro.html">
+                        <li class="navigation_link">Registros</li>
+                    </a>
+                    <a href="./ultimasConsultas.html">
+                        <li class="navigation_link">Ultimas Consultas</li>
+                    </a>
+                </ul>
+                <div class="containerdropdown">
+                    <div class="circle-perfil"></div>
+                    <div class="dropdownMenu">
+                        <ul>
+                            <a href="">
+                                <li class="dropdownLink">Configurações</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Preferência</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-file">
+            <input type="file" id="input-file" accept="application/pdf">
+        </div>
+
+        <canvas id="showPDF">
+
+        </canvas>
+        <div class="container_btn">
+            <button type="submit" id="btn_avancar">Avançar <i class="fa-solid fa-arrow-right"></i></button>
+            <button type="submit" id="btn_delete">Deletar <i class="fa-solid fa-trash"></i></button>
+        </div>
+    </main>
+    <footer id="footer-container">
+        <div id="footerdiv">
+            <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    <script type="module" src="../js/upload.js"></script>
+    <script src="../js/global.js"></script>
+    <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>   
+</body>
+
+</html>

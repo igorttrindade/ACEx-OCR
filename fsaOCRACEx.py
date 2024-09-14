@@ -1,7 +1,8 @@
 from pdf2image import convert_from_path
 import easyocr
 import cv2
-
+import numpy as np
+import torch
 # Caminho do arquivo PDF
 pdf_path = 'folhapontoOCR2.pdf'
 

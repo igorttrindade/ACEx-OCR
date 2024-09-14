@@ -1,0 +1,8 @@
+#ignore paste .venv
+.venv
+folhapontoOCR.pdf
+folhapontoOCR2.pdf
+node_modules
+.conda
+package-lock.json
+package.json
