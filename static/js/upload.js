@@ -1,5 +1,5 @@
-import * as pdfjsLib from '../../node_modules/pdfjs-dist/build/pdf.min.mjs';
-pdfjsLib.GlobalWorkerOptions.workerSrc = '../../node_modules/pdfjs-dist/build/pdf.worker.mjs';
+import * as pdfjsLib from './pdf.min.mjs';
+pdfjsLib.GlobalWorkerOptions.workerSrc = './pdf.worker.mjs';
 
 document.getElementById('input-file').addEventListener('change', function (event) {
   const file = event.target.files[0];
