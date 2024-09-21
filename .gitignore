@@ -6,3 +6,4 @@ node_modules
 .conda
 package-lock.json
 package.json
+/routes/__pycache__
