@@ -43,9 +43,9 @@
         </nav>
     </header>
     <main>
-        <form action="{{ url_for('upload.upload_file_post')}}" method="POST">
+        <form action="{{ url_for('upload.upload_file_post')}}" enctype="multipart/form-data" method="POST">
             <div class="container-file">
-                <input type="file" id="input-file" accept="application/pdf">
+                <input type="file" id="input-file" name="arquivo" accept="application/pdf">
             </div>
 
             <canvas id="showPDF">
