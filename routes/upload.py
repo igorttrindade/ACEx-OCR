@@ -1,7 +1,7 @@
 import os
 from flask import Blueprint,render_template,request,current_app, jsonify
 from werkzeug.utils import secure_filename
-from controller.ocr import leituraOCR
+from controller.ocr import leituraOCR, process_folha_ponto
 
 upload_route = Blueprint('upload', __name__)
 
@@ -23,7 +23,9 @@ def upload_file_post():
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath) 
         ocr_result = leituraOCR(filepath)
-    return render_template('process_ocr.html',ocr_text=ocr_result)
+        
+        folha_ponto = process_folha_ponto(ocr_result)
+    return render_template('process_ocr.html',ocr_text=folha_ponto)
 
 @upload_route.route('/<int:ocr_id>/edit')
 def form_edit_folha(user_id):

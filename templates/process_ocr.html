@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AutoConverter | Registro</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/registro.css)}}">
-    <script src="{{url_for('static', filename='js/global.js')}}"></script>
-    
+    <link rel="stylesheet" href="{{url_for('static', filename='css/process_ocr.css')}}">
 </head>
 
 <body>
@@ -43,15 +41,37 @@
         </div>
     </nav>
     <main>
-        <div class="result_output">
-            {{ ocr_text }}
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Entrada</th>
+                    <th>Início do Intervalo</th>
+                    <th>Fim do Intervalo</th>
+                    <th>Saída</th>
+                    <th>Hora Extra</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in ocr_text %}
+                <tr>
+                    <td>{{ record.data }}</td>
+                    <td>{{ record.entrada }}</td>
+                    <td>{{ record.inicio_intervalo }}</td>
+                    <td>{{ record.fim_intervalo }}</td>
+                    <td>{{ record.saida }}</td>
+                    <td>{{ record.hora_extra }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </main>
     <div id="footer-container">
         <footer id="footerdiv">
             <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
         </footer>
     </div>
+    <script src="{{url_for('static', filename='js/global.js')}}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 

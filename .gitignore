@@ -2,6 +2,7 @@
 .venv
 folhapontoOCR.pdf
 folhapontoOCR2.pdf
+folhapontoOCR3.pdf
 node_modules
 .conda
 package-lock.json
