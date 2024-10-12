@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConverter | Usuários</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/user_list.css')}}">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <ul class="navigation">
+                <a href="">
+                    <li class="navigation_link">Upload</li>
+                </a>
+                <a href="">
+                    <li class="navigation_link">Registros</li>
+                </a>
+                <a href="">
+                    <li class="navigation_link">Ultimas Consultas</li>
+                </a>
+                <a href="">
+                    <li class="navigation_link">Usuários</li>
+                </a>
+            </ul>
+            <div class="containerdropdown">
+                <div class="circle-perfil"></div>
+                <div class="dropdownMenu">
+                    <ul>
+                        <a href="">
+                            <li class="dropdownLink">Configurações</li>
+                        </a>
+                        <a href="">
+                            <li class="dropdownLink">Preferência</li>
+                        </a>
+                        <a href="">
+                            <li class="dropdownLink">Logout</li>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="user-creation-section">
+            <h2>Criar Novo Usuário</h2>
+            <form id="createUserForm" action="/usuarios/criar-usuario" method="POST">
+                <label for="name">Matricula:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="role">Função:</label>
+                <select id="role" name="role" required>
+                    <option value="admin">Admin</option>
+                    <option value="user">Usuário</option>
+                </select>
+                <button type="submit">Criar</button>
+            </form>
+        </section>
+
+        <section class="user-list-section">
+            <h2>Lista de Usuários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id_usuario }}</td>
+                        <td>{{ user.email_usuario }}</td>
+                        <td>
+                            <button id="btn_modify" onclick="modificarUsuario('{{ user.id_usuario }}')"><i class="fa-solid fa-pen"></i></button>
+                            <button id="btn_delete" onclick="excluirUsuario('{{ user.id_usuario }}')"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <div id="responseMessage" class="notification"></div>
+    </main>
+
+    <div id="footer-container">
+        <footer id="footerdiv">
+            <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="{{url_for('static', filename='js/global.js')}}"></script>
+    <script src="{{url_for('static', filename='js/createUser.js')}}"></script>
+    <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

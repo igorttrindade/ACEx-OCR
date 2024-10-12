@@ -1,0 +1,145 @@
+@import url(./global.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--backgroundColor);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+:root {
+    --primaryColor: #0BC5EA;
+    --backgroundColor: #F5FFFE;
+    --textColor: #000;
+    --buttonColor: #007BFF;
+    --buttonHoverColor: #0056b3;
+    --inputBorderColor: #ddd;
+    --inputFocusBorderColor: #0BC5EA;
+}
+
+.main {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.user-creation-section, .user-list-section {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primaryColor);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+input, select {
+    padding: 10px;
+    border: 1px solid var(--inputBorderColor);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, select:focus {
+    border-color: var(--inputFocusBorderColor);
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--buttonColor);
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--buttonHoverColor);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+#footer-container {
+    width: 100%;
+    margin-top: auto;
+}
+
+#footerdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    background-color: #2d404e;
+    color: white;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    display: none; /* Inicialmente oculto */
+    transition: opacity 0.5s ease;
+}
+
+.notification.success {
+    background-color: green; /* Cor verde para sucesso */
+}
+
+.notification.error {
+    background-color: red; /* Cor vermelha para erro */
+}
+
+#btn_modify{
+    width: auto;
+}
+
+#btn_delete{
+    width: auto;
+}
+
+#btn_delete:hover{
+    background-color: #ff4141;
+}
