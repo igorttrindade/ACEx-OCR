@@ -1,11 +1,12 @@
 from database.database import supabase
 
-def criar_usuario(email, id_usuario):
+def criar_usuario(email, id_usuario,date):
     try:
         response = (
             supabase.table("tb_usuario")
             .insert({"id_usuario": id_usuario,
                      "email_usuario":email,
+                     "data_criacao":date,
                      })
             .execute()
         )

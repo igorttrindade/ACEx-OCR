@@ -6,4 +6,5 @@ export function mostrarNotificacao(mensagem, cor) {
     setTimeout(() => {
         responseMessage.style.display = 'none';
     }, 5000);
+    window.location.reload()
 }

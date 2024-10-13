@@ -13,7 +13,7 @@
         <nav class="navbar">
             <div class="navbar-content">
                 <ul class="navigation">
-                    <a href="">
+                    <a href="{{ url_for('upload.upload_file') }}">
                         <li class="navigation_link">Upload</li>
                     </a>
                     <a href="">
@@ -22,7 +22,7 @@
                     <a href="">
                         <li class="navigation_link">Ultimas Consultas</li>
                     </a>
-                    <a href="">
+                    <a href="{{ url_for('userlist.registerUser') }}">
                         <li class="navigation_link">Usuários</li>
                     </a>
                 </ul>

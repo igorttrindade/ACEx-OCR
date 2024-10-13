@@ -12,7 +12,7 @@
     <nav class="navbar">
         <div class="navbar-content">
             <ul class="navigation">
-                <a href="">
+                <a href="{{ url_for('upload.upload_file') }}">
                     <li class="navigation_link">Upload</li>
                 </a>
                 <a href="">
@@ -21,7 +21,7 @@
                 <a href="">
                     <li class="navigation_link">Ultimas Consultas</li>
                 </a>
-                <a href="">
+                <a href="{{ url_for('userlist.registerUser') }}">
                     <li class="navigation_link">Usuários</li>
                 </a>
             </ul>
@@ -47,7 +47,7 @@
     <main>
         <section class="user-creation-section">
             <h2>Criar Novo Usuário</h2>
-            <form id="createUserForm" action="/usuarios/criar-usuario" method="POST">
+            <form id="createUserForm" method="POST">
                 <label for="name">Matricula:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
@@ -66,8 +66,9 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Nome</th>
+                        <th>Matricula</th>
                         <th>Email</th>
+                        <th>Data de Criação</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
@@ -76,9 +77,10 @@
                     <tr>
                         <td>{{ user.id_usuario }}</td>
                         <td>{{ user.email_usuario }}</td>
+                        <td>{{ user.data_criacao }}</td>
                         <td>
                             <button id="btn_modify" onclick="modificarUsuario('{{ user.id_usuario }}')"><i class="fa-solid fa-pen"></i></button>
-                            <button id="btn_delete" onclick="excluirUsuario('{{ user.id_usuario }}')"><i class="fa-solid fa-trash"></i></button>
+                            <button id="btn_delete" data-user-id="{{ user.id_usuario }}"><i class="fa-solid fa-trash"></i></button>
                         </td>
                     </tr>
                     {% endfor %}
@@ -95,7 +97,7 @@
     </div>
 
     <script src="{{url_for('static', filename='js/global.js')}}"></script>
-    <script src="{{url_for('static', filename='js/createUser.js')}}"></script>
+    <script type="module" src="{{url_for('static', filename='js/createUser.js')}}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 
