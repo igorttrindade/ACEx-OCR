@@ -7,10 +7,7 @@ document.getElementById('input-file').addEventListener('change', function (event
     const reader = new FileReader();
     reader.onload = function (e) {
       const pdfData = new Uint8Array(e.target.result);
-
-      // Carrega o PDF usando a biblioteca PDF.js
       pdfjsLib.getDocument({ data: pdfData }).promise.then(function (pdf) {
-        // Carrega a primeira página do PDF
         pdf.getPage(1).then(function (page) {
           const scale = 1.5;
           const viewport = page.getViewport({ scale: scale });
@@ -20,7 +17,6 @@ document.getElementById('input-file').addEventListener('change', function (event
           canvas.height = viewport.height;
           canvas.width = viewport.width;
           canvas.style.display = 'block';
-          // Renderiza a página no canvas
           const renderContext = {
             canvasContext: context,
             viewport: viewport
