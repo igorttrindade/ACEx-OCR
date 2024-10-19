@@ -1,5 +1,8 @@
-const perfil = document.querySelector('.circle-perfil')
-perfil.addEventListener('click', function () {
-    const dropdownMenu = document.querySelector('.dropdownMenu');
-    dropdownMenu.classList.toggle('active');
+const containerDropdown = document.querySelector('.containerdropdown');
+const dropdownMenu = document.querySelector('.dropdownMenu');
+containerDropdown.addEventListener('mouseenter', function () {
+    dropdownMenu.classList.add('active');
+});
+containerDropdown.addEventListener('mouseleave', function () {
+    dropdownMenu.classList.remove('active');
 });

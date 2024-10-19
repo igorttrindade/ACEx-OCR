@@ -25,7 +25,7 @@ def criar_usuario_api():
     id_usuario = data.get('name')
     email = data.get('email')
     data_criacao = date.today()
-    data_criacao_str = data_criacao.isoformat()
+    data_criacao_str = data_criacao.strftime("%d/%m/%Y")
 
     response = criar_usuario(email,id_usuario,data_criacao_str)
 

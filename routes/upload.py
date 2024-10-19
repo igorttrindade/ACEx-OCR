@@ -13,16 +13,18 @@ def upload_file():
 @upload_route.route('/process_ocr', methods=['POST'])
 def upload_file_post():
     if 'arquivo' not in request.files:
-        return 'Nenhum arquivo foi enviado.'
+        return 'Nenhum arquivo foi enviado.', 400
+    
     file = request.files['arquivo']
     if file.filename == '':
-        return 'Nenhum arquivo selecionado.'
+        return 'Nenhum arquivo selecionado.', 400
 
     if file:
         filename = secure_filename(file.filename)
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
-        file.save(filepath) 
+        file.save(filepath)
         ocr_result = leituraOCR(filepath)
-        
         folha_ponto = process_folha_ponto(ocr_result)
-    return render_template('process_ocr.html',ocr_text=folha_ponto)
+        return render_template('process_ocr.html', ocr_text=folha_ponto)
+
+    return 'Erro ao processar o arquivo.', 500

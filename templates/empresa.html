@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConverter | Empresa</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/empresa.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
+                </div>
+
+                <ul class="navigation">
+                    <a href="{{ url_for('upload.upload_file') }}">
+                        <li class="navigation_link">Upload</li>
+                    </a>
+                    <div class="dropdown">
+                        <li class="navigation_link">Cadastros</li>
+                        <ul class="dropdown-content">
+                            <a href="{{ url_for('empresa.company') }}"><li class="dropdown-item">Empresa</li></a>
+                            <a href="#"><li class="dropdown-item">Funcionário</li></a>
+                            <a href="{{ url_for('userlist.registerUser') }}"><li class="dropdown-item">Usuários</li></a>
+                        </ul>
+                    </div>
+                </ul>
+
+                <div class="containerdropdown">
+                    <div class="circle-perfil"></div>
+                    <div class="dropdownMenu">
+                        <ul>
+                            <a href="">
+                                <li class="dropdownLink">Configurações</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Preferência</li>
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}">
+                                <li class="dropdownLink">Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="company-section">
+            <h2>Detalhes da Empresa</h2>
+            <form id="companyForm">
+                <div class="form-group">
+                    <label for="companyName">Nome da Empresa:</label>
+                    <input type="text" id="companyName" value="Nome Atual" readonly>
+                    <button type="button" class="edit-button" onclick="editField('companyName')"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="form-group">
+                    <label for="companyCity">Cidade</label>
+                    <input type="text" id="companyCity" value="Cidade da Empresa" readonly>
+                    <button type="button" class="edit-button" onclick="editField('companyCity')"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="form-group">
+                    <label for="companyState">UF</label>
+                    <input type="text" id="companyState" value="UF de estado" readonly>
+                    <button type="button" class="edit-button" onclick="editField('companyState')"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="form-group">
+                    <label for="companyAddress">Endereço</label>
+                    <input type="text" id="companyAddress" value="Endereço Atual" readonly>
+                    <button type="button" class="edit-button" onclick="editField('companyAddress')"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="form-group">
+                    <label for="companyCNPJ">CNPJ</label>
+                    <input type="text" id="companyCNPJ" value="CNPJ" readonly>
+                    <button type="button" class="edit-button" onclick="editField('companyCNPJ')"><i class="fa-solid fa-pen"></i></button>
+                </div>
+                <div class="form-group" style="display: none;" id="editButtons">
+                    <button type="button" class="save-button" id="saveButton"><i class="fa-solid fa-floppy-disk"></i></button>
+                    <button type="button" class="cancel-button" onclick="cancelEdit()"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </form>
+            
+        </section>
+    </main>
+    <footer id="footer-container">
+        <div id="footerdiv">
+            <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{{url_for('static', filename='js/global.js')}}"></script>
+    <script src="{{url_for('static', filename='js/empresa.js')}}"></script>
+    <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

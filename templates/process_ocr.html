@@ -25,49 +25,34 @@
                     <li class="navigation_link">Usuários</li>
                 </a>
             </ul>
-                <div class="containerdropdown">
-                    <div class="circle-perfil"></div>
-                    <div class="dropdownMenu">
-                        <ul>
-                            <a href="">
-                                <li class="dropdownLink">Configurações</li>
-                            </a>
-                            <a href="">
-                                <li class="dropdownLink">Preferência</li>
-                            </a>
-                            <a href="">
-                                <li class="dropdownLink">Logout</li>
-                            </a>
-                        </ul>
-                    </div>
+            <div class="containerdropdown">
+                <div class="circle-perfil"></div>
+                <div class="dropdownMenu">
+                    <ul>
+                        <a href="">
+                            <li class="dropdownLink">Configurações</li>
+                        </a>
+                        <a href="">
+                            <li class="dropdownLink">Preferência</li>
+                        </a>
+                        <a href="">
+                            <li class="dropdownLink">Logout</li>
+                        </a>
+                    </ul>
                 </div>
+            </div>
         </div>
     </nav>
     <main>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Entrada</th>
-                    <th>Início do Intervalo</th>
-                    <th>Fim do Intervalo</th>
-                    <th>Saída</th>
-                    <th>Hora Extra</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for record in ocr_text %}
-                <tr>
-                    <td>{{ record.data }}</td>
-                    <td>{{ record.entrada }}</td>
-                    <td>{{ record.inicio_intervalo }}</td>
-                    <td>{{ record.fim_intervalo }}</td>
-                    <td>{{ record.saida }}</td>
-                    <td>{{ record.hora_extra }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        {% if ocr_text %}
+        <ul>
+            {% for record in ocr_text %}
+            <li>Data: {{ record.data }} - Entrada: {{ record.entrada }} - Saída: {{ record.saida }}</li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>Nenhum dado encontrado.</p>
+        {% endif %}
     </main>
     <div id="footer-container">
         <footer id="footerdiv">

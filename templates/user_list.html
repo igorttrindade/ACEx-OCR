@@ -4,46 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoConverter | Usuários</title>
+    <title>AutoConverter | Usuarios</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/user_list.css')}}">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <ul class="navigation">
-                <a href="{{ url_for('upload.upload_file') }}">
-                    <li class="navigation_link">Upload</li>
-                </a>
-                <a href="">
-                    <li class="navigation_link">Registros</li>
-                </a>
-                <a href="">
-                    <li class="navigation_link">Ultimas Consultas</li>
-                </a>
-                <a href="{{ url_for('userlist.registerUser') }}">
-                    <li class="navigation_link">Usuários</li>
-                </a>
-            </ul>
-            <div class="containerdropdown">
-                <div class="circle-perfil"></div>
-                <div class="dropdownMenu">
-                    <ul>
-                        <a href="">
-                            <li class="dropdownLink">Configurações</li>
-                        </a>
-                        <a href="">
-                            <li class="dropdownLink">Preferência</li>
-                        </a>
-                        <a href="">
-                            <li class="dropdownLink">Logout</li>
-                        </a>
-                    </ul>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
+                </div>
+
+                <ul class="navigation">
+                    <a href="{{ url_for('upload.upload_file') }}">
+                        <li class="navigation_link">Upload</li>
+                    </a>
+                    <div class="dropdown">
+                        <li class="navigation_link">Cadastros</li>
+                        <ul class="dropdown-content">
+                            <a href="{{ url_for('empresa.company') }}"><li class="dropdown-item">Empresa</li></a>
+                            <a href="#"><li class="dropdown-item">Funcionário</li></a>
+                            <a href="{{ url_for('userlist.registerUser') }}"><li class="dropdown-item">Usuários</li></a>
+                        </ul>
+                    </div>
+                </ul>
+
+                <div class="containerdropdown">
+                    <div class="circle-perfil"></div>
+                    <div class="dropdownMenu">
+                        <ul>
+                            <a href="">
+                                <li class="dropdownLink">Configurações</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Preferência</li>
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}">
+                                <li class="dropdownLink">Logout</li>
+                            </a>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
+        </nav>
+    </header>
     <main>
         <section class="user-creation-section">
             <h2>Criar Novo Usuário</h2>

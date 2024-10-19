@@ -1,0 +1,94 @@
+@import url(./global.css);
+
+.company-section {
+    padding: 20px;
+}
+
+.company-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.company-section form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.company-section form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.company-section form input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #089db3;
+}
+
+.company-details-section {
+    padding: 20px;
+}
+
+.company-details-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.company-details p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.company-section, .company-details-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.edit-button {
+    width: auto;
+    background-color: var(--primaryColor);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background-color: #089db3;
+}
+
+.save-button .cancel-button{
+    width: auto;
+}
+
+.cancel-button:hover{
+    background-color: rgb(255, 105, 105);
+}

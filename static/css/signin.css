@@ -109,3 +109,15 @@ body {
 .notification.error {
   background-color: red; /* Cor vermelha para erro */
 }
+
+.img_logo{
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.container_login{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
