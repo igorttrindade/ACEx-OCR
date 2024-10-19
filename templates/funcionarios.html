@@ -4,28 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoConverter | Registro</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/registro.css)}}">
-    
+    <title>AutoConverter | Funcionários</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/funcionarios.css')}}">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-content">
-            <ul class="navigation">
-                <a href="">
-                    <li class="navigation_link">Upload</li>
-                </a>
-                <a href="">
-                    <li class="navigation_link">Registros</li>
-                </a>
-                <a href="">
-                    <li class="navigation_link">Ultimas Consultas</li>
-                </a>
-                <a href="">
-                    <li class="navigation_link">Usuários</li>
-                </a>
-            </ul>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
+                </div>
+
+                <ul class="navigation">
+                    <a href="{{ url_for('upload.upload_file') }}">
+                        <li class="navigation_link">Upload</li>
+                    </a>
+                    <div class="dropdown">
+                        <li class="navigation_link">Cadastros</li>
+                        <ul class="dropdown-content">
+                            <a href="{{ url_for('empresa.company') }}"><li class="dropdown-item">Empresa</li></a>
+                            <a href="#"><li class="dropdown-item">Funcionário</li></a>
+                            <a href="{{ url_for('userlist.registerUser') }}"><li class="dropdown-item">Usuários</li></a>
+                        </ul>
+                    </div>
+                </ul>
+
                 <div class="containerdropdown">
                     <div class="circle-perfil"></div>
                     <div class="dropdownMenu">
@@ -36,20 +40,22 @@
                             <a href="">
                                 <li class="dropdownLink">Preferência</li>
                             </a>
-                            <a href="">
+                            <a href="{{ url_for('auth.logout') }}">
                                 <li class="dropdownLink">Logout</li>
                             </a>
                         </ul>
                     </div>
                 </div>
-        </div>
-    </nav>
-    <main></main>
-    <div id="footer-container">
-        <footer id="footerdiv">
+            </div>
+        </nav>
+    </header>
+    <main>
+    </main>
+    <footer id="footer-container">
+        <div id="footerdiv">
             <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
     <script src="{{url_for('static', filename='js/global.js')}}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
