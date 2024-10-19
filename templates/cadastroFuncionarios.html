@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoConverter | Cadastro de Funcionários</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cadastroFuncionarios.css')}}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
+                </div>
+
+                <ul class="navigation">
+                    <a href="{{ url_for('upload.upload_file') }}">
+                        <li class="navigation_link">Upload</li>
+                    </a>
+                    <div class="dropdown">
+                        <li class="navigation_link">Cadastros</li>
+                        <ul class="dropdown-content">
+                            <a href="{{ url_for('empresa.company') }}"><li class="dropdown-item">Empresa</li></a>
+                            <a href="{{ url_for('funcionario.page_func') }}"><li class="dropdown-item">Funcionário</li></a>
+                            <a href="{{ url_for('userlist.registerUser') }}"><li class="dropdown-item">Usuários</li></a>
+                        </ul>
+                    </div>
+                </ul>
+
+                <div class="containerdropdown">
+                    <div class="circle-perfil"></div>
+                    <div class="dropdownMenu">
+                        <ul>
+                            <a href="">
+                                <li class="dropdownLink">Configurações</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Preferência</li>
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}">
+                                <li class="dropdownLink">Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="employee-section">
+            <h2>Cadastro de Funcionário</h2>
+            <form action="{{ url_for('funcionario.cadastro_func') }}" method="POST" id="employeeForm">
+                <div class="form-group">
+                    <label for="employeeMatricula">Matrícula:</label>
+                    <input type="text" id="employeeMatricula" maxlength="6" name="matricula_func" placeholder="Digite a matrícula do funcionário" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeName">Nome do Funcionário:</label>
+                    <input type="text" id="employeeName" name="nome_func" placeholder="Digite o nome do funcionário" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeCargo">Cargo:</label>
+                    <input type="text" id="employeeCargo" name="cargo_func" placeholder="Digite o cargo do funcionário" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeSalary">Salário:</label>
+                    <input type="number" id="employeeSalary" name="salario_func" placeholder="Digite o salário do funcionário" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeStart">Início na Empresa:</label>
+                    <input type="date" id="employeeStart" name="inicio_func" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeCompetence">Competência:</label>
+                    <input type="text" id="employeeCompetence" name="compet_func" placeholder="Digite a competência" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeCompany">Nome da Empresa:</label>
+                    <select id="employeeCompany" name="empresa_func" required>
+                        <option value="" disabled selected>Selecione a empresa</option>
+                        {% for empresa in empresas %}
+                        <option value="{{ empresa.id }}">{{ empresa.nome_empresa }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeBirth">Data de Nascimento:</label>
+                    <input type="date" name="dtnasc_func" id="employeeBirth" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeSex">Sexo:</label>
+                    <select id="employeeSex" name="sexo_func" required>
+                        <option value="" disabled selected>Selecione o sexo</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="nao-binario">Não Binário</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="employeeStatus">Status:</label>
+                    <select id="employeeStatus" name="status_func" required>
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-button">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer-container">
+        <div id="footerdiv">
+            <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{url_for('static', filename='js/global.js')}}"></script>
+    <script type="module" src="{{url_for('static', filename='js/createFunc.js')}}"></script>
+    <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

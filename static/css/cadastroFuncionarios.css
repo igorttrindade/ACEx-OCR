@@ -1,0 +1,51 @@
+@import url(./global.css);
+
+.employee-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.employee-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.employee-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.employee-section form label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.employee-section form input,
+.employee-section form select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button.submit-button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primaryColor);
+    color: white;
+    cursor: pointer;
+}
+
+button.submit-button:hover {
+    background-color: #089db3;
+}

@@ -1,0 +1,57 @@
+@import url(./global.css);
+
+.listagem-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.funcionarios-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--backgroundColor);
+}
+
+.funcionarios-table th,
+.funcionarios-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left; 
+}
+
+.funcionarios-table th {
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.funcionarios-table tr:hover {
+    background-color: #f1f1f1; 
+}
+
+.edit-button,
+.delete-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-button {
+    background-color: var(--primaryColor);
+    color: white;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #0093c4; 
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}

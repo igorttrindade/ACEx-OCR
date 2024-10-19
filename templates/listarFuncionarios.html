@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoConverter | Funcionários</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/funcionarios.css')}}">
+    <title>AutoConverter | Listagem de Funcionários</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/listarFuncionarios.css')}}">
 </head>
 
 <body>
@@ -14,6 +15,7 @@
                 <div class="logo">
                     <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
                 </div>
+
                 <ul class="navigation">
                     <a href="{{ url_for('upload.upload_file') }}">
                         <li class="navigation_link">Upload</li>
@@ -47,22 +49,47 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <section class="funcionarios-section">
-            <h2>Funcionários</h2>
-            <div class="button-group">
-                <button class="action-button" data-url="{{ url_for('funcionario.cadastro_func') }}">Cadastrar Funcionário</button>
-                <button class="action-button" data-url="{{ url_for('funcionario.listar_func') }}">Listar Funcionários</button>
-            </div>
+        <section class="listagem-section">
+            <h2>Listagem de Funcionários</h2>
+            <table class="funcionarios-table">
+                <thead>
+                    <tr>
+                        <th>Matricula</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Cargo</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for funcionario in func %}
+                    <tr>
+                        <td>{{ funcionario.id_funcionario }}</td>
+                        <td>{{ funcionario.nome_funcionario }}</td>
+                        <td>{{ funcionario.email }}</td>
+                        <td>{{ funcionario.cargo_funcionario }}</td>
+                        <td>{{ funcionario.status_funcionario }}</td>
+                        <td>
+                            <button class="edit-button">Editar</button>
+                            <button class="delete-button">Excluir</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>                
+            </table>
         </section>
     </main>
+
     <footer id="footer-container">
         <div id="footerdiv">
             <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
         </div>
     </footer>
+
     <script src="{{url_for('static', filename='js/global.js')}}"></script>
-    <script src="{{url_for('static', filename='js/funcionarios.js')}}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 
