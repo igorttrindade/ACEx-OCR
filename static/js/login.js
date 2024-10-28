@@ -22,6 +22,7 @@ document.querySelector('.login-form').addEventListener('submit', function (event
     })
     .then(result => {
         if (result.success) {
+            sessionStorage.setItem('id_funcionario', result.id_funcionario)
             mostrarNotificacao("Login bem-sucessido", 'green')
             window.location.href = "/ponto";
         } else {

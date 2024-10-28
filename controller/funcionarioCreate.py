@@ -3,10 +3,10 @@ from database.database import supabase
 def criar_funcionario(matricula_func, nome_func,cargo_func,salario_func,inicio_func,compet_func,empresa_func,nasc_func,sexo_func,status_func):
     try:
         response = (
-            supabase.table("tb_func")
+            supabase.table("tb_funcionarios")
             .insert({"id_funcionario": matricula_func,
                      "nome_funcionario":nome_func,
-                     "cargo_func":cargo_func,
+                     "cargo_funcionario":cargo_func,
                      "salario_funcionario":salario_func,
                      "inicio_empresa":inicio_func,
                      "competencia":compet_func,

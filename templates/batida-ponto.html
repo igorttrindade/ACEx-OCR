@@ -52,7 +52,10 @@
     <main>
         <div class="container">
             <h1>Registrar Batida de Ponto</h1>
-            <button id="btn_batida" onclick="registrarBatida()">Registrar Ponto</button>
+            <form id="batidaPontoForm">
+                <button type="submit" id="btn_batida" onclick="registrarBatida()">Registrar Ponto</button>
+            </form>
+            
             <div id="responseMessage" class="notification"></div>
         </div>
     </main>
@@ -62,7 +65,7 @@
         </div>
     </footer>
     <script src="{{url_for('static', filename='js/global.js')}}"></script>
-    <script src="{{ url_for('static', filename='js/ponto.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/ponto.js') }}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 

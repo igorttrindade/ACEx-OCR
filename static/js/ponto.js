@@ -1,10 +1,17 @@
+import { mostrarNotificacao } from './mostrarNotific.js';
+
+document.getElementById('batidaPontoForm').addEventListener('submit', function (event){
+    event.preventDefault()
+    registrarBatida()
+})
+
 function registrarBatida() {
-    batidaHorario = Date.now()
-    fetch('/batida-de-ponto', {
+    const dataAtual = new Date().toISOString();
+    const id_funcionario = sessionStorage.getItem('id_funcionario')
+    fetch('/ponto', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ horario: dataAtual,id_funcionario:id_funcionario })
     })
     .then(response => {
         if (!response.ok) {
@@ -13,10 +20,10 @@ function registrarBatida() {
         return response.json();
     })
     .then(data => {
-        document.getElementById('responseMessage').innerText = "Batida de ponto registrada com sucesso!";
+        mostrarNotificacao("Batida realizada com sucesso!", 'success');
     })
     .catch(error => {
-        document.getElementById('responseMessage').innerText = error.message;
+        mostrarNotificacao("Erro ao realizar a batida!", 'error');
         console.error('Error:', error);
     });
 }
