@@ -24,7 +24,7 @@ def login():
             print(f"Erro ao fazer login: {e}")
             return jsonify({'success': False, 'message': 'Erro no servidor'}), 500
     
-    return render_template('login.html')
+    return render_template('index.html')
 
 @auth.route('/logout')
 def logout():

@@ -6,3 +6,4 @@ containerDropdown.addEventListener('mouseenter', function () {
 containerDropdown.addEventListener('mouseleave', function () {
     dropdownMenu.classList.remove('active');
 });
+

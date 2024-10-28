@@ -1,12 +1,10 @@
 function registrarBatida() {
+    batidaHorario = Date.now()
     fetch('/batida-de-ponto', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-            usuarioId: '123', 
-        }),
     })
     .then(response => {
         if (!response.ok) {

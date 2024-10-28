@@ -23,7 +23,7 @@ document.querySelector('.login-form').addEventListener('submit', function (event
     .then(result => {
         if (result.success) {
             mostrarNotificacao("Login bem-sucessido", 'green')
-            window.location.href = "/upload";
+            window.location.href = "/ponto";
         } else {
             mostrarNotificacao('Erro ao logar, verifique suas credenciais!', 'red')
         }

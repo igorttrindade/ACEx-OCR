@@ -4,18 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto Converter | Batida de Ponto</title>
+    <title>AutoConverter | Ponto</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ponto.css') }}">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Registrar Batida de Ponto</h1>
-        <button id="btn_batida" onclick="registrarBatida()">Registrar Ponto</button>
-        <div id="responseMessage" class="notification"></div>
-    </div>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='assets/logo_dark.png') }}" alt="Logo" class="logo-img">
+                </div>
 
+                <ul class="navigation">
+                    <a href="{{ url_for('ponto.batida_de_ponto') }}">
+                        <li class="navigation_link">Ponto</li>
+                    </a>
+                    <div class="dropdown">
+                        <li class="navigation_link">Cadastros</li>
+                        <ul class="dropdown-content">
+                            <a href="{{ url_for('empresa.company') }}"><li class="dropdown-item">Empresa</li></a>
+                            <a href="{{ url_for('funcionario.page_func') }}"><li class="dropdown-item">Funcionário</li></a>
+                            <a href="{{ url_for('userlist.registerUser') }}"><li class="dropdown-item">Usuários</li></a>
+                        </ul>
+                    </div>
+                </ul>
+
+                <div class="containerdropdown">
+                    <div class="circle-perfil"></div>
+                    <div class="dropdownMenu">
+                        <ul>
+                            <a href="">
+                                <li class="dropdownLink">Configurações</li>
+                            </a>
+                            <a href="">
+                                <li class="dropdownLink">Preferência</li>
+                            </a>
+                            <a href="{{ url_for('auth.logout') }}">
+                                <li class="dropdownLink">Logout</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h1>Registrar Batida de Ponto</h1>
+            <button id="btn_batida" onclick="registrarBatida()">Registrar Ponto</button>
+            <div id="responseMessage" class="notification"></div>
+        </div>
+    </main>
+    <footer id="footer-container">
+        <div id="footerdiv">
+            <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="{{url_for('static', filename='js/global.js')}}"></script>
     <script src="{{ url_for('static', filename='js/ponto.js') }}"></script>
+    <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
