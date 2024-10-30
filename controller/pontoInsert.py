@@ -47,7 +47,7 @@ def armazenarBatidaPonto(id_funcionario, horario):
 
                 update_data = {coluna: valor}
                 if coluna == "saida_funcionario" and registro.get("entrada_funcionario"):
-                    entrada = datetime.strptime(registro["entrada_funcionario"], "%d/%m/%Y %H:%M:%S")
+                    entrada = datetime.strptime(registro["entrada_funcionario"], "%H:%M:%S")
                     horas_trabalhadas = horario_atual - entrada
                     update_data["hora_trabalhada"] = str(horas_trabalhadas)
                     
