@@ -5,25 +5,22 @@ document.getElementById('batidaPontoForm').addEventListener('submit', function (
     registrarBatida()
 })
 
-function registrarBatida() {
-    const dataAtual = new Date().toISOString();
-    const id_funcionario = sessionStorage.getItem('id_funcionario')
-    fetch('/ponto', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ horario: dataAtual,id_funcionario:id_funcionario })
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Erro ao registrar a batida de ponto');
+async function registrarBatida() {
+    try {
+        const response = await fetch("/ponto", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ horario: new Date().toISOString() })
+        });
+        
+        const data = await response.json();
+        document.getElementById("responseMessage").textContent = data.message;
+        
+        if (response.ok) {
+            location.reload(); 
         }
-        return response.json();
-    })
-    .then(data => {
-        mostrarNotificacao("Batida realizada com sucesso!", 'success');
-    })
-    .catch(error => {
-        mostrarNotificacao("Erro ao realizar a batida!", 'error');
-        console.error('Error:', error);
-    });
+    } catch (error) {
+        console.error("Erro ao registrar batida:", error);
+        document.getElementById("responseMessage").textContent = "Erro ao registrar batida de ponto.";
+    }
 }

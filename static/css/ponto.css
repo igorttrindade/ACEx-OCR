@@ -4,7 +4,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80vh;
+    min-height: 70vh;
 }
 
 .container {
@@ -31,3 +31,10 @@ main{
     margin-top: 20px;
     font-size: 16px;
 }
+
+.pontos-dia {
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+

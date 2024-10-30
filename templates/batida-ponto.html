@@ -57,6 +57,22 @@
             </form>
             
             <div id="responseMessage" class="notification"></div>
+
+            <div id="pontosDia">
+                <h2>Batidas de Ponto de Hoje</h2>
+                {% if pontos %}
+                    {% for ponto in pontos %}
+                        <p>
+                            {{ ponto.entrada_funcionario or '-' }} |
+                            {{ ponto.inicio_intervalo or '-' }} |
+                            {{ ponto.termino_intervalo or '-' }} |
+                            {{ ponto.saida_funcionario or '-' }}
+                        </p>
+                    {% endfor %}
+                {% else %}
+                    <p>Nenhuma batida de ponto registrada hoje.</p>
+                {% endif %}
+            </div>
         </div>
     </main>
     <footer id="footer-container">
