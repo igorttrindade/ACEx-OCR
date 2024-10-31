@@ -46,3 +46,8 @@ def listar_func():
         func = []
 
     return render_template('listarFuncionarios.html', func=func)
+
+@func.route('/listar-funcionarios/folha-ponto')
+def folha_func():
+    """GET registros do arquivo e lista de usuários"""
+    return render_template('folhaFuncionarios.html')

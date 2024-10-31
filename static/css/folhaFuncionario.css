@@ -1,0 +1,96 @@
+@import url(./global.css);
+
+.folha-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.folha-container h2 {
+    text-align: center;
+    color: var(--primaryColor);
+}
+
+.folha-container label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+.folha-container input[type="date"],
+.folha-container input[type="file"] {
+    width: calc(50% - 60px);
+    padding: 8px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tabela-ponto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tabela-header,
+.tabela-linha {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    font-weight: 600;
+    color: var(--text-color);
+    border-bottom: 1px solid #ddd;
+}
+
+.tabela-header p {
+    text-align: center;
+}
+
+.dia {
+    display: grid;
+    grid-template-columns: 1fr repeat(4, 1fr);
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.9em;
+}
+
+.dia h4 {
+    font-size: 1em;
+    color: var(--primaryColor);
+}
+
+.dia label {
+    font-weight: 500;
+    margin: 0;
+}
+
+.dia input[type="time"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#salvar-folha {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: var(--primaryColor);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#salvar-folha:hover {
+    background-color: #099bb6;
+}

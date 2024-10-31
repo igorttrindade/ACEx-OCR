@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AutoConverter | Listagem de Funcionários</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='css/listarFuncionarios.css')}}">
+    <title>AutoConverter | Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/folhaFuncionario.css') }}">
 </head>
 
 <body>
@@ -49,48 +49,37 @@
             </div>
         </nav>
     </header>
-
     <main>
-        <section class="listagem-section">
-            <h2>Listagem de Funcionários</h2>
-            <table class="funcionarios-table">
-                <thead>
-                    <tr>
-                        <th>Matricula</th>
-                        <th>Nome</th>
-                        <th>Email</th>
-                        <th>Cargo</th>
-                        <th>Status</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for funcionario in func %}
-                    <tr>
-                        <td>{{ funcionario.id_funcionario }}</td>
-                        <td>{{ funcionario.nome_funcionario }}</td>
-                        <td>{{ funcionario.email }}</td>
-                        <td>{{ funcionario.cargo_funcionario }}</td>
-                        <td>{{ funcionario.status_funcionario }}</td>
-                        <td>
-                           <a href="" class="edit-button"><i class="fa-solid fa-pen"></i></a>
-                           <a href="{{ url_for('funcionario.folha_func') }}" class="ponto-button"><i class="fa-solid fa-sheet-plastic"></i></a>
-                           <a href="" class="delete-button"><i class="fa-solid fa-trash"></i></a>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>                
-            </table>
-        </section>
-    </main>
+        <div class="folha-container">
+            <h2>Cadastro da Folha de Ponto</h2>
+            <label for="periodo">Período:</label>
+            <input type="date" id="periodo-inicio" name="periodo-inicio">
+            <span>até</span>
+            <input type="date" id="periodo-fim" name="periodo-fim">
 
+            <div class="tabela-ponto">
+                <div class="tabela-header">
+                    <p>Dia</p>
+                    <p>Entrada</p>
+                    <p>Início Intervalo</p>
+                    <p>Término Intervalo</p>
+                    <p>Saída</p>
+                </div>
+                <div id="dias-container">
+                </div>
+            </div>
+            <label for="upload-pdf">Upload da Folha de Ponto (PDF):</label>
+            <input type="file" id="upload-pdf" accept=".pdf">
+            <button id="salvar-folha">Salvar</button>
+        </div>
+    </main>
     <footer id="footer-container">
         <div id="footerdiv">
             <p class="txt_footer">© 2024 AutoConverter, Inc. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="{{url_for('static', filename='js/global.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/createPonto.js') }}"></script>
     <script src="https://kit.fontawesome.com/9744135ed0.js" crossorigin="anonymous"></script>
 </body>
 

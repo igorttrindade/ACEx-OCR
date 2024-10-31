@@ -6,7 +6,7 @@
 }
 
 .funcionarios-table {
-    width: 80%;
+    width: auto;
     margin: 20px auto;
     border-collapse: collapse;
     background-color: var(--backgroundColor);
@@ -29,8 +29,8 @@
 }
 
 .edit-button,
-.delete-button {
-    padding: 5px 10px;
+.delete-button, .ponto-button {
+    padding: 8px 10px;
     margin: 0 5px;
     border: none;
     border-radius: 5px; 
@@ -38,7 +38,7 @@
     font-size: 14px;
 }
 
-.edit-button {
+.edit-button, .ponto-button{
     background-color: var(--primaryColor);
     color: white;
 }
@@ -48,7 +48,7 @@
     color: white;
 }
 
-.edit-button:hover {
+.edit-button:hover, .ponto-button:hover{
     background-color: #0093c4; 
 }
 
