@@ -93,3 +93,4 @@ def armazenarBatidaPonto(id_funcionario, horario):
     except Exception as e:
         print(f"Erro ao registrar batida de ponto: {e}")
         return None
+    

@@ -1,0 +1,119 @@
+[33mcommit 31e8c0a67b9db06355c42db133776d1b60be68db[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Wed Oct 30 21:09:10 2024 -0300
+
+    :sparkles: feat: Criação da página de cadastro de ponto
+
+[33mcommit 64793e2ba6192364ea4bf96ab58b8b64e87bd492[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Wed Oct 30 20:10:40 2024 -0300
+
+    :boom: fix: Correção formato de dados errado na linha 50
+
+[33mcommit 1150ce5d92b8e404bce12c7e6ea3feb1ac283cbd[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Tue Oct 29 21:03:06 2024 -0300
+
+    :bug: fix: Ponto funcional
+
+[33mcommit 10f312c295e83411ccc6bb39181f9a3dee7f154c[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Mon Oct 28 12:17:30 2024 -0300
+
+    :sparkles: feat: Página de ponto, com alguns erros
+
+[33mcommit 5c6afd2a71b57085178a7e25610e9d17bebf6f27[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Mon Oct 28 10:27:45 2024 -0300
+
+    :bug: fix: Mudança no projeto, sem OCR. Ajustado tela principal para tela de ponto.
+
+[33mcommit 5a3b1d950417d51cca4512458db3ea3c6b58c318[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 19 18:01:17 2024 -0300
+
+    Parte de funcionarios.
+
+[33mcommit e48ea0f9ebc7eb0ee2cf540060a903eecddd3820[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 19 15:59:44 2024 -0300
+
+    :sparkles: feat: Rota da página de funcionario
+
+[33mcommit 66867228e60ad19ba4e15ccd62bb6df7b357c736[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 19 15:46:07 2024 -0300
+
+    :sparkles: feat: Página de funcionario
+
+[33mcommit cd22932448a10756a4ece0605eb277b5bce96ad2[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 19 15:42:43 2024 -0300
+
+    :boom: fix: Tela de upload caminho errado para tela de empresa
+
+[33mcommit 9f53f65bf94456037cb48e5704160790c12dee97[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 19 02:13:26 2024 -0300
+
+    Feito a criação da tela de empresa, juntamente com a lógica de negócio.
+
+[33mcommit 1cbdae46287fc1837b6de32527510a5905d5850a[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sun Oct 13 17:18:44 2024 -0300
+
+    :sparkles: feat: Página de ponto
+
+[33mcommit 6fcc6842a5ac742118dde2d81496831aa5daad6b[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sun Oct 13 15:25:17 2024 -0300
+
+    :bug: fix: Exclusão de usuários
+
+[33mcommit 91a9262c38f7be8513d1fd5cd278c5f2701eb5b0[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sun Oct 13 14:17:02 2024 -0300
+
+    :sparkles: feat: Página de login funcionando
+
+[33mcommit 43ff7c9109f55559bab25cd79c6dc056d7d4b2dc[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Oct 12 16:37:54 2024 -0300
+
+    :sparkles: feat: Página de usuários, juntamente a conexão com supabase.
+
+[33mcommit 15d53b41b5af9f115831147cb835bbc9f301df1a[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Thu Oct 3 17:18:43 2024 -0300
+
+    :sparkles: feat: Página de processamento do OCR
+
+[33mcommit fcbba814ee13d1d1f0554b8824bde669bc80f5e5[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sun Sep 22 21:21:52 2024 -0300
+
+    :sparkles: feat: OCR funcionando direto na página, mudanças nas rotas, inserido imagens.
+
+[33mcommit b3f06604ec93f1f57f38b275bb7030d3a9c70c99[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Sat Sep 21 01:52:49 2024 -0300
+
+    ✨ feat: Reconfiguração das rotas, passado para arquivos separados, configurações e aplicações no OCR e blueprint das rotas!
+
+[33mcommit 740e457ea249750fcaebd7fd243341b4122a0a43[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Tue Sep 17 23:51:38 2024 -0300
+
+    :sparkles: feat: Desenvolvimento Backend, organização de pastas e também criação de rotas com flask.
+
+[33mcommit b92b0b4db813c61f76e2c9c54ba55765b609f707[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Fri Sep 13 21:30:57 2024 -0300
+
+    ✨ feat: Finalização do frontend, e também organização da estrutura de pastas dentro do projeto.
+
+[33mcommit 1ae9c206a2619fb3e573c80c0b9d1c6cfe4f06c8[m
+Author: Igor Trindade <igorttrindade61@gmail.com>
+Date:   Mon Sep 2 20:38:22 2024 -0300
+
+    Primeiro commit, e adição dos arquivos
